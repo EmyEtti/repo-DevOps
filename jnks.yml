@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/EmyEtti/repo-DevOps.git']]])
+            }
+        }
+        stage('2_stage'){
+            steps{
+                echo 'hello'
+            }
+        }
+        stage('3_stage'){
+            steps{
+                echo 'Hi'
+            }
+            
+        }
+    }
+}
