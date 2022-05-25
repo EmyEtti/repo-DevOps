@@ -11,6 +11,9 @@ pipeline {
         stage('2_stage'){
             steps{
                 echo 'hello'
+                sh '''mkdir ex
+                     ls 
+                   '''
             }
         }
         stage('3_stage'){
